@@ -1,0 +1,60 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #151515; }
+
+body {
+  font-family: kenvector_future; }
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+#score {
+  position: absolute;
+  font-size: 1.5em;
+  z-index: 10;
+  top: 5%;
+  right: 5%;
+  color: #4271f2; }
+
+#hero_life {
+  position: absolute;
+  font-size: 1.5em;
+  z-index: 10;
+  top: 10%;
+  right: 5%;
+  color: #4271f2; }
+
+#game-over, #game-over-overlay {
+  margin: auto;
+  width: 512px;
+  height: 480px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none; }
+
+#game-over-overlay {
+  background-color: black;
+  opacity: .5; }
+
+#game-over, #game-over-overlay {
+  height: 200px;
+  text-align: center;
+  color: white; }
+  #game-over h1, #game-over-overlay h1 {
+    font-size: 3em;
+    font-family: sans-serif; }
+  #game-over button, #game-over-overlay button {
+    font-size: 1.5em; }

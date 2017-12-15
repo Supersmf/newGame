@@ -1,28 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
 
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+<head>
+	<meta charset="utf-8">
+	<title>War Space</title>
+	<link rel="stylesheet" href="css/pageStyle.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.min.css"> </head>
 
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body>
-    <div id="game-over-overlay">
-    </div>
+<body>
+	<header>
+		<div class="header_main">
+			<div class="head_wrapper">
+				<!--				<div class="head_logo">-->
+				<h3 class="logo_title">WAR<br>
+						<span class="logo_title_span">SPACE</span>
+					</h3>
+				<!--			</div>-->
+				<nav class="head_nav">
+					<ul>
+						<li class="head_nav_content">
+							<a href="#about">
+								<p>About</p>
+							</a>
+						</li>
+						<li class="head_nav_content">
+							<a href="#controls">
+								<p>Controls</p>
+							</a>
+						</li>
+						<li class="head_nav_content">
+							<a href="#screenshots">
+								<p>Screenshots</p>
+							</a>
+						</li>
+						<li class="head_nav_content">
+							<a href="#play">
+								<p>Play</p>
+							</a>
+						</li>
+						<li class="head_nav_content">
+							<a href="#developed">
+								<p>Developed</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="header-banner">
+			<div class="header-banner_wrapper">
+				<h1>WAR SPACE<br>GAME</h1> </div>
+		</div>
+	</header>
+	<section>
+		<div class="back">
+			<article class="main_wrapper">
+				<h2>About</h2>
+				<p class="title_clarification">Information about the Game</p>
+				<!--			<div class="aboutSection">-->
+				<ul class="mainArticle">
+					<li> <i class="fa fa-grav" aria-hidden="true"></i>
+						<h3>Genre</h3>
+						<p>War Space is a space combat arcade game, in which the player flies on a spaceship in space and fights off enemy ships</p>
+					</li>
+					<li> <i class="fa fa-wpexplorer" aria-hidden="true"></i>
+						<h3>Technologies</h3>
+						<p>The game is built using: Webpack, JavaScript, Babel, ECMAScript 6, Canvas, Web Audio API</p>
+					</li>
+					<li> <i class="fa fa-blind" aria-hidden="true"></i>
+						<h3>Resolution</h3>
+						<p>You can enjoy the game on almost all popular computers, with the exception of a touch screen device (this is an opportunity to appear in the following releases).</p>
+					</li>
+					<li> <i class="fa fa-tachometer" aria-hidden="true"></i>
+						<h3>Difficulty</h3>
+						<p>This is not the most difficult game from which you could meet, but you can also find several kinds of enemies, as well as the main enemy in the form of a Death Star</p>
+					</li>
+				</ul>
+				<!--			</div>--> </article>
+		</div>
+		<div class="back">
+			<article class="main_wrapper">
+				<div class="aboutArticle">
+					<h2>Controls</h2>
+					<p class="title_clarification">Player control buttons</p>
+					<div class="controlKeys"> 
+						<img src="img/arrow_keys.png">
+						<p class="betweenKeys">or</p> 
+						<img src="img/wasd_keys.png"> 
+						<p>Use the "W", "A", "S", "D" or the arrow keys to move the spaceship along the playing space</p>
+					</div>
+					<div class="controlSpace"> 
+						<img src="img/spacebar.png">
+						<p>Use the space bar to attack enemy ships</p>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="back">
+			<article class="main_wrapper">
+				<div class="aboutArticle">
+					<h2>Screenshots</h2>
+					<p class="title_clarification">Images from the game</p>
+					<div class="controlKeys">
+						<img src="img/screenshots/1.png" alt="first image">
+						<img src="img/screenshots/2.png" alt="second image">
+					</div>
+					<div class="controlKeys">
+						<img src="img/screenshots/3.png" alt="third image">
+						<img src="img/screenshots/4.png" alt="fourth image">
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="back">
+			<article class="main_wrapper">
+				<div class="aboutArticle">
+					<h2>Play</h2>
+					<p class="title_clarification">Сlick button enjoy the game</p>
+					<div class="btn">
+						<a class="playButton" href="game.html">Play The Game</a>
+					</div>
+					
+				</div>
+			</article>
+		</div>
+		<div class="back">
+			<article class="main_wrapper">
+				<div class="aboutArticle">
+					
+					
+				</div>
+			</article>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="footer_wrapper">Developed by Gaidykevich Oleg 2017</div>
+	</footer>
 
-    <canvas></canvas>
-    <div id="score"></div>
-    <div id="hero_life"></div>
-    <div id="game-over">
-      <h1 class="gameInfo"></h1>
-      <button id="play-again">Play Again</button>
-    </div>
+</body>
 
-    <script type="text/javascript" src="js/main.js"></script>
-  </body>
 </html>

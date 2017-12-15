@@ -356,7 +356,16 @@ var init = function init() {
 
 _resources.resources.load(['img/sheet.png', 'img/starBackground.png', 'img/explosions.png', 'img/death_star.png', 'sound/dart_veyder.mp3', 'sound/laser.mp3', 'sound/explosion.mp3', 'sound/unknown planet.mp3']);
 
-_resources.resources.onReady(init);
+var start = function start() {
+
+    document.querySelector('#playButton').addEventListener('click', function () {
+        document.querySelector('.preview').style.display = 'none';
+        document.querySelector('canvas').style.display = 'block';
+        init();
+    });
+};
+
+_resources.resources.onReady(start);
 
 var update = function update(dt) {
     gameTime += dt;

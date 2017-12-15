@@ -4,3 +4,11 @@
   font-weight: 300;
   font-style: normal;
 }
+
+@font-face {
+  font-family: Rebellion;
+  src: url('../font/Rebellion.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+

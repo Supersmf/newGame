@@ -277,7 +277,8 @@ footer {
   width: 100%;
   box-shadow: 0 1px #f2f2f2, 0 2px #f7f7f7, 0 3px #fbfbfb; }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0; }
 
@@ -362,3 +363,66 @@ canvas {
     color: #d9d9d9;
     transform: scale(1.03);
     background: #9999ff; }
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 20;
+  display: flex;
+  align-items: center; }
+  .preloader.done {
+    visibility: hidden; }
+
+/*coffee cup*/
+.coffee_cup {
+  width: 40px;
+  height: 48px;
+  border: 2px white solid;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+  margin: 36px auto; }
+
+.coffee_cup:after, .coffee_cup:before {
+  position: absolute;
+  content: ""; }
+
+.coffee_cup:after {
+  width: 10px;
+  height: 24px;
+  border: 2px #fff solid;
+  border-left: none;
+  border-radius: 0px 40px 40px 0px;
+  left: 40px; }
+
+.coffee_cup:before {
+  width: 2px;
+  height: 12px;
+  background-color: white;
+  top: -20px;
+  left: 8px;
+  box-shadow: 10px 0px 0px 0px white, 10px -10px 0px 0px white, 20px 0px 0px 0px white;
+  -webkit-animation: steam 1s linear infinite alternate;
+  -moz-animation: steam 1s linear infinite alternate;
+  animation: steam 1s linear infinite alternate; }
+
+@-webkit-keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }
+
+@-moz-keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }
+
+@keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }

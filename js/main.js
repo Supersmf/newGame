@@ -357,7 +357,7 @@ var init = function init() {
 _resources.resources.load(['img/sheet.png', 'img/starBackground.png', 'img/explosions.png', 'img/death_star.png', 'sound/dart_veyder.mp3', 'sound/laser.mp3', 'sound/explosion.mp3', 'sound/unknown planet.mp3']);
 
 var start = function start() {
-
+    (0, _utils.preload)();
     document.querySelector('#playButton').addEventListener('click', function () {
         document.querySelector('.preview').style.display = 'none';
         document.querySelector('canvas').style.display = 'block';
@@ -939,6 +939,12 @@ var animFrame = function () {
     };
 }();
 
+var preload = function preload() {
+    console.log(true);
+    document.querySelector('.preloader').classList.add('done');
+    console.log(document.querySelector('.preloader').classList);
+};
+
 var randomSpeed = function randomSpeed(min, max) {
     return Math.random() * (max - min) + min;
 };
@@ -947,6 +953,7 @@ exports.collides = collides;
 exports.boxCollides = boxCollides;
 exports.animFrame = animFrame;
 exports.randomSpeed = randomSpeed;
+exports.preload = preload;
 
 /***/ })
 /******/ ]);

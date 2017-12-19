@@ -12,3 +12,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Lobster;
+  src: url('../font/Lobster-Regular.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Play;
+  src: url('../font/Play-Regular.ttf');
+  font-weight: 300;
+  font-style: normal;
+}

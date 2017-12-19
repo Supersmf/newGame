@@ -8,21 +8,32 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/background.css">
-	<link rel="stylesheet" href="css/style.css"> </head>
+	<link rel="stylesheet" href="css/style.css"> 
+</head>
 
 <body>
 	<div class="preloader">
 		<div class="coffee_cup"></div>
 	</div>
+
 	<div class="preview">
 		<h1>War<br>Space</h1>
-		<button id="playButton">PLAY</button>
+		<button id="playButton" class="playButton">PLAY</button>
 	</div>
-	<div id="game-over-overlay"> </div>
+
+	<div id="game-over-overlay" class="game-over-overlay"> </div>
+
 	<canvas></canvas>
-	<div id="score"></div>
-	<div id="hero_life"></div>
-	<div id="game-over">
+
+	<div id="score" class="score"></div>
+	<div id="hero_life" class="hero_life"></div>
+	<div class="boss_life">
+		<div class="progress-bar">
+			<div class="progress"></div>
+		</div>
+	</div>
+
+	<div id="game-over" class="game-over">
 		<h2 class="gameInfo"></h2>
 		<button id="play-again">Play Again</button>
 	</div>

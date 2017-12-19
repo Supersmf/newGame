@@ -211,6 +211,7 @@ var setKey = function setKey(event, status) {
         default:
             // Convert ASCII codes to letters
             key = String.fromCharCode(code);
+        // console.log(key);
     }
 
     pressedKeys[key] = status;
@@ -293,6 +294,8 @@ var hero = new _Sprite2.default('img/sheet.png', [211, 942], [98, 90], 16, [0, 1
 
 var explosion = new _Sprite2.default('img/explosions.png', [0, 0], [256, 200], 16, [0, 1, 2, 3, 4, 5, 6, 7, 8], null, true);
 
+var life = new _Sprite2.default('img/sheet.png', [848, 480], [10, 57]);
+
 var gameTime = 0;
 var isGameOver = void 0;
 var isWin = false;
@@ -300,6 +303,8 @@ var isWin = false;
 var score = 0;
 var scoreEl = document.getElementById('score');
 var heroLifeEl = document.getElementById('hero_life');
+var bossProgress = document.querySelector('.boss_life');
+var bossLifeProgress = document.querySelector('.progress');
 var volume = 1;
 var isboss = false;
 
@@ -315,6 +320,7 @@ var bossScore = 25000;
 var bulletSpeed = 800;
 
 var game_background = new _Entity2.default([0, 0], background);
+var player_life = new _Entity2.default([0, 0], life);
 var player = new _Character2.default([0, 0], hero, playerSpeed, null, playerLife);
 var boss = new _Character2.default([WIDTH / 2, HEIGHT / 5], enemi_type_4, bossSpeed, 'boss', bossLife);
 
@@ -348,6 +354,7 @@ var init = function init() {
         reset();
     });
 
+    heroLifeEl.innerHTML = '<img class="ships">'.repeat(player.life);
     loadSounds();
     reset();
     lastTime = Date.now();
@@ -357,7 +364,8 @@ var init = function init() {
 _resources.resources.load(['img/sheet.png', 'img/starBackground.png', 'img/explosions.png', 'img/death_star.png', 'sound/dart_veyder.mp3', 'sound/laser.mp3', 'sound/explosion.mp3', 'sound/unknown planet.mp3']);
 
 var start = function start() {
-    (0, _utils.preload)();
+
+    document.querySelector('.preloader').classList.add('done');
     document.querySelector('#playButton').addEventListener('click', function () {
         document.querySelector('.preview').style.display = 'none';
         document.querySelector('canvas').style.display = 'block';
@@ -380,6 +388,7 @@ var update = function update(dt) {
             isboss = !isboss;
             maingSound.stop();
             marchingSound.play();
+            bossProgress.style.display = 'block';
         }
         if (enemies.length % 10 || !enemies.length) {
             enemies.push(new _Character2.default([Math.random() * (canvas.width - 39), 0], enemi_type_1, (0, _utils.randomSpeed)(50, 300), 'ship', enemyLive));
@@ -392,13 +401,20 @@ var update = function update(dt) {
 
     checkCollisions();
 
-    scoreEl.innerHTML = 'Score: ' + score;
-    heroLifeEl.innerHTML = 'Lifes: ' + player.life;
+    scoreEl.innerHTML = 'Score:<br>' + score;
+
+    if (isboss) {
+        bossLifeProgress.style.width = 500 * boss.life / bossLife + 'px';
+    }
 };
 
 var handleInput = function handleInput(dt) {
 
     player.handleInput(dt);
+
+    if ((0, _input.isDown)('9')) {
+        score = 24900;
+    }
 
     if ((0, _input.isDown)('SPACE') && !isGameOver && Date.now() - player.lastFire > 500) {
 
@@ -549,6 +565,7 @@ var render = function render() {
         renderEntities(enemies);
         renderEntities(explosions);
     }
+    renderEntities(player_life);
 };
 
 var renderEntities = function renderEntities(list) {
@@ -573,6 +590,7 @@ var gameOver = function gameOver() {
         document.querySelector('.gameInfo').innerHTML = 'GAME OVER';
         isGameOver = true;
     }
+    heroLifeEl.innerHTML = '<div class="ships"></div>'.repeat(player.life);
 };
 
 var win = function win() {
@@ -580,7 +598,7 @@ var win = function win() {
     if (boss.damage()) {
         document.getElementById('game-over').style.display = 'block';
         document.getElementById('game-over-overlay').style.display = 'block';
-        document.querySelector('.gameInfo').innerHTML = 'YOU WIN';
+        document.querySelector('.gameInfo').innerHTML = 'YOU WON';
         marchingSound.stop();
         isWin = true;
         enemies = [];
@@ -595,14 +613,18 @@ var reset = function reset() {
     isboss = false;
     isWin = false;
     gameTime = 0;
-    // score = 24900;
     score = 0;
 
     enemies = [];
-
     maingSound.replay();
+
     player = new _Character2.default([0, 0], hero, playerSpeed, null, playerLife);
     boss = new _Character2.default([WIDTH / 2, HEIGHT / 5], enemi_type_4, bossSpeed, 'boss', bossLife);
+
+    bossLifeProgress.style.width = 500 + 'px';
+    bossProgress.style.display = 'none';
+
+    heroLifeEl.innerHTML = '<div class="ships"></div>'.repeat(player.life);
 
     player.pos = [WIDTH / 2 - player.sprite.size[0], HEIGHT - player.sprite.size[1]];
 };
@@ -939,12 +961,6 @@ var animFrame = function () {
     };
 }();
 
-var preload = function preload() {
-    console.log(true);
-    document.querySelector('.preloader').classList.add('done');
-    console.log(document.querySelector('.preloader').classList);
-};
-
 var randomSpeed = function randomSpeed(min, max) {
     return Math.random() * (max - min) + min;
 };
@@ -953,7 +969,6 @@ exports.collides = collides;
 exports.boxCollides = boxCollides;
 exports.animFrame = animFrame;
 exports.randomSpeed = randomSpeed;
-exports.preload = preload;
 
 /***/ })
 /******/ ]);

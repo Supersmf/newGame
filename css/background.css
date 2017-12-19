@@ -1,3 +1,11 @@
 body{
 	background-image: url('../img/starBackground.png');
 }
+
+.ships{
+	background-image: url(../img/sheet.png);
+	margin: 10px;
+	width: 33px;
+	height: 25px;
+	background-position: -482px -358px;
+}

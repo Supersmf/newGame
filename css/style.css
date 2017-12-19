@@ -277,6 +277,70 @@ footer {
   width: 100%;
   box-shadow: 0 1px #f2f2f2, 0 2px #f7f7f7, 0 3px #fbfbfb; }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 20;
+  display: flex;
+  align-items: center; }
+  .preloader.done {
+    visibility: hidden; }
+
+/*coffee cup*/
+.coffee_cup {
+  width: 40px;
+  height: 48px;
+  border: 2px white solid;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  margin: 36px auto; }
+  .coffee_cup:after, .coffee_cup:before {
+    position: absolute;
+    content: ""; }
+  .coffee_cup:after {
+    width: 10px;
+    height: 24px;
+    border: 2px #fff solid;
+    border-left: none;
+    border-radius: 0px 40px 40px 0px;
+    left: 40px;
+    top: 5px; }
+  .coffee_cup:before {
+    width: 2px;
+    height: 12px;
+    background-color: white;
+    top: -20px;
+    left: 8px;
+    box-shadow: 10px 0px 0px 0px white, 10px -10px 0px 0px white, 20px 0px 0px 0px white;
+    -webkit-animation: steam 1s linear infinite alternate;
+    -moz-animation: steam 1s linear infinite alternate;
+    animation: steam 1s linear infinite alternate; }
+
+@-webkit-keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }
+
+@-moz-keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }
+
+@keyframes steam {
+  0% {
+    height: 0px; }
+  100% {
+    height: 12px; } }
+
+* {
+  box-sizing: border-box; }
+
 html,
 body {
   margin: 0;
@@ -296,23 +360,22 @@ canvas {
   left: 0;
   right: 0; }
 
-#score {
+.score {
   position: absolute;
   font-size: 1.5em;
   z-index: 10;
   top: 5%;
   right: 5%;
-  color: #4271f2; }
+  color: #4271f2;
+  text-align: center; }
 
-#hero_life {
+.hero_life {
   position: absolute;
-  font-size: 1.5em;
   z-index: 10;
-  top: 10%;
-  right: 5%;
-  color: #4271f2; }
+  top: 5%;
+  left: 2%; }
 
-#game-over, #game-over-overlay {
+.game-over, .game-over-overlay {
   margin: auto;
   width: 512px;
   height: 480px;
@@ -324,18 +387,18 @@ canvas {
   z-index: 1;
   display: none; }
 
-#game-over-overlay {
+.game-over-overlay {
   background-color: black;
   opacity: .5; }
 
-#game-over, #game-over-overlay {
+.game-over, .game-over-overlay {
   height: 200px;
   text-align: center;
   color: white; }
-  #game-over h2, #game-over-overlay h2 {
+  .game-over h2, .game-over-overlay h2 {
     font-size: 3em;
     font-family: sans-serif; }
-  #game-over button, #game-over-overlay button {
+  .game-over button, .game-over-overlay button {
     font-size: 1.5em; }
 
 .preview {
@@ -349,7 +412,7 @@ canvas {
     margin: 5%;
     color: #00b386; }
 
-#playButton {
+.playButton {
   font-size: 3rem;
   width: 40%;
   padding: 2%;
@@ -359,70 +422,31 @@ canvas {
   cursor: pointer;
   font-family: Rebellion;
   color: #0073e6; }
-  #playButton:hover {
+  .playButton:hover {
     color: #d9d9d9;
     transform: scale(1.03);
     background: #9999ff; }
 
-.preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 20;
-  display: flex;
-  align-items: center; }
-  .preloader.done {
-    visibility: hidden; }
-
-/*coffee cup*/
-.coffee_cup {
-  width: 40px;
-  height: 48px;
-  border: 2px white solid;
-  border-radius: 0px 0px 5px 5px;
-  position: relative;
-  margin: 36px auto; }
-
-.coffee_cup:after, .coffee_cup:before {
+.boss_life {
+  width: 450px;
+  height: 50px;
+  color: #fff;
   position: absolute;
-  content: ""; }
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; }
 
-.coffee_cup:after {
-  width: 10px;
-  height: 24px;
-  border: 2px #fff solid;
-  border-left: none;
-  border-radius: 0px 40px 40px 0px;
-  left: 40px; }
+.progress-bar {
+  width: 506px;
+  height: 26px;
+  background-color: #bbb;
+  border-radius: 13px;
+  padding: 3px;
+  font-size: 1rem; }
 
-.coffee_cup:before {
-  width: 2px;
-  height: 12px;
-  background-color: white;
-  top: -20px;
-  left: 8px;
-  box-shadow: 10px 0px 0px 0px white, 10px -10px 0px 0px white, 20px 0px 0px 0px white;
-  -webkit-animation: steam 1s linear infinite alternate;
-  -moz-animation: steam 1s linear infinite alternate;
-  animation: steam 1s linear infinite alternate; }
-
-@-webkit-keyframes steam {
-  0% {
-    height: 0px; }
-  100% {
-    height: 12px; } }
-
-@-moz-keyframes steam {
-  0% {
-    height: 0px; }
-  100% {
-    height: 12px; } }
-
-@keyframes steam {
-  0% {
-    height: 0px; }
-  100% {
-    height: 12px; } }
+.progress {
+  width: 500px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: dodgerblue; }

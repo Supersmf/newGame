@@ -3,9 +3,9 @@
 }
 
 body {
-/*	background-color: rgba(21, 21, 21, 0.5);*/
 	position: relative;
 	min-height: 100vh;
+/*	font-family: Play;*/
 }
 
 
@@ -28,15 +28,6 @@ body {
 	justify-content: space-between;
 }
 
-/*
-.head_logo {
-	display: inline-block;
-	height: 100%;
-	font-family: Rebellion;
-	text-align: center;
-}
-*/
-
 .logo_title {
 	padding-top: 12px;
 	color: #fb9c06;
@@ -46,7 +37,6 @@ body {
 }
 
 .logo_title_span {
-/*	margin: 0;*/
 	color: #6e6d6b;
 }
 
@@ -65,9 +55,6 @@ body {
 .head_nav_content a {
 	text-decoration: none;
 	color: rgba(251, 156, 6, 1);
-/*	text-align: center;*/
-/*	text-align: center;*/
-/*	margin-left: 52px;*/
 }
 
 .head_nav_content:hover {
@@ -79,8 +66,7 @@ body {
 }
 
 .head_nav_content p {
-/*	color: #6e6d6b;*/
-	font-family: "Calibri";
+	font-family: Lobster;
 	font-size: 22px;
 	margin: -5px 0 0 50px;
 	font-weight: bold;
@@ -88,8 +74,6 @@ body {
 
 .header-banner {
 	height: 500px;
-/*	border-top: 3px rgb(5, 5, 252) solid;*/
-/*	border-bottom: 3px rgb(120, 5, 252) solid;*/
 	margin-top: 80px;
 	background-image: url(../img/starBackground.png);
 }
@@ -107,7 +91,7 @@ body {
 	font-family: Rebellion;
 	font-size: 7rem;
 	text-align: center;
-	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 	line-height: 150%;
 	color: #00b386;
 }
@@ -117,21 +101,19 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	font-size: 0;
-/*	position: relative;*/
 	font-family: "Calibri";
-/*	min-height: 216px;*/
-/*	background: green;*/
 	min-height: 300px;
 }
 
 .main_wrapper h2{
-/*	margin-top: 5%;*/
+	font-family: Lobster;
 	font-size: 3rem;
 	text-align: center;
 }
 
 .title_clarification{
 	font-size: 1rem;
+	color: #777;
 	text-align: center;
 	font-style: italic;
 }
@@ -144,7 +126,6 @@ section .back:nth-child(even){
 	display: flex;
 	justify-content: space-between;
 	min-height: 300px;
-/*	font-size: 1.5rem;*/
 	list-style: none;
 }
 .mainArticle li{
@@ -164,7 +145,9 @@ section .back:nth-child(even){
 
 .mainArticle li p{
 	margin: 15px 15px;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
+	color: #777;
+	font-family: Play;
 }
 .controlKeys{
 	font-size: 2rem;
@@ -175,6 +158,7 @@ section .back:nth-child(even){
 }
 .controlKeys p{
 	margin-left: 5%;
+	font-family: Play;
 }
 .betweenKeys{
 	font-size: 8rem;
@@ -187,10 +171,28 @@ section .back:nth-child(even){
 	justify-content: space-around;
 	align-items: center;
 	margin: 5% 0;
+	font-family: Play; 
 }
 .controlKeys img{
 	width: 48%
 }
+.death_star{
+/*	margin: 10%;*/
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.5rem;
+	font-family: Play;
+	align-items: center;
+	line-height: 200%; 
+	text-align: justify;
+}
+.death_star img{
+	width: 20%; 
+	margin: 5%;
+	
+}
+
+
 .btn{
 	display: flex;
 	justify-content: center;
@@ -204,9 +206,11 @@ section .back:nth-child(even){
 	border-radius: 30px;
 	font-size: 3rem;
 	padding: 2%;
-/*	color: rgba(6, 250, 148, 1);*/
 	background: rgba(251, 156, 6, 1);
 	border: 3px solid white;
+	font-family: Lobster;
+	font-weight: 700;
+	color: black;
 }
 .playButton:hover{
 	background: rgba(251, 156, 6, 0.8);
@@ -215,26 +219,47 @@ section .back:nth-child(even){
 .playButton:active{
 	transform: scale(0.95);
 }
+.author{
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 5%;
+}
+.author img{
+	margin: 5%;
+	width: 25%;
+	border-radius: 50%;
+} 
+.studentName{
+	font-size: 2rem;
+	font-family: Play;
+	margin: 2%;
+}
+
+.school{
+	font-size: 1.3rem;
+	font-family: Play;
+}
+.author a{
+	font-size: 3rem;
+	color: #fb9c06;
+}
 
 footer {
 	width: 100%;
 	height: 70px;
 	background: rgba(117, 117, 117, 1);
-	color: ;
 	position: absolute;
 	bottom: -45px;
 	display: flex;
 	align-items: center;
-/*	border-bottom: 3px solid #cc830f;*/
+	font-family: Play;
 }
 
 .footer_wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
-/*	text-transform: uppercase;*/
-/*	text-align: center;*/
 	font-size: 1.2rem;
-/*	font-family: "StMarie-Thin";*/
-/*	padding: 15px;*/
 	letter-spacing: 0.6px;
 }

@@ -381,7 +381,7 @@ var update = function update(dt) {
     handleInput(dt);
     updateEntities(dt);
 
-    if (Math.random() < 1 - Math.pow(.9997, gameTime) && !isboss) {
+    if (Math.random() < 1 - Math.pow(.9992, gameTime) && !isboss) {
         if (score >= bossScore) {
             enemies.length = 0;
             enemies.push(boss);

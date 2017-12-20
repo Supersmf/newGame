@@ -241,9 +241,18 @@ section .back:nth-child(even){
 	font-size: 1.3rem;
 	font-family: Play;
 }
-.author a{
+.gitLink{
 	font-size: 3rem;
 	color: #fb9c06;
+}
+.presentation{
+	font-size: 1.3rem;
+	text-decoration: none;
+	color: green;
+}
+.presentation:hover{
+	color: grey;
+	transform: scale(1.1);
 }
 
 footer {
